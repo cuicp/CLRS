@@ -119,9 +119,9 @@ int main()
 		tree_insert(T,make_shared<tree>(x,"",nullptr,nullptr,nullptr));
 	}
 
-	tree_travel(T);
-	cout<<"tree_max="<<tree_max(T)<<endl;
-	cout<<"tree_min="<<tree_min(T)<<endl;
+    tree_travel(T);
+    cout<<"tree_max="<<tree_max(T)->key<<endl;
+	cout<<"tree_min="<<tree_min(T)->key<<endl;
 	cout<<"please input the key you will delete"<<endl;
 	int del;
 	cin>>del;

@@ -3,7 +3,7 @@
 #include<memory>
 using namespace std;
 typedef int Color;
-typedef int key_type;
+typedef string key_type;
 typedef string value_type;
 const Color BLACK=1;
 const Color RED=0;
@@ -17,13 +17,11 @@ typedef struct rb_tree
 	shared_ptr<rb_tree>left;
 	shared_ptr<rb_tree>right;
 	
-	rb_tree(key_type key,value_type value,Color,shared_ptr<rb_tree>p=nullptr,shared_ptr<rb_tree>left=nullptr,shared_ptr<rb_tree>right=nullptr):
-		key(key),value(value),color(color),p(p),left(left),right(right){}
+	rb_tree(key_type _key,value_type _value,Color _color,shared_ptr<rb_tree>_p=nullptr,shared_ptr<rb_tree>_left=nullptr,shared_ptr<rb_tree>_right=nullptr):
+		key(_key),value(_value),color(_color),p(_p),left(_left),right(_right){}
 
 }rb_tree;
 const shared_ptr<rb_tree>NIL(0,0,BLACK);
-shared_ptr<rb_tree>root;
-
 
 shared_ptr<rb_tree> rb_tree_max(shared_ptr<rb_tree>x)
 {
@@ -285,7 +283,7 @@ int main()
 {
 
 
-
+	cout<<"hello world"<<endl;
 
 
 

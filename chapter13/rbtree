@@ -2,7 +2,6 @@
 #include<string>
 #include<memory>
 #include<cstdlib>
-#include<cstdio>
 using namespace std;
 typedef int Color;
 typedef int key_type;
@@ -294,30 +293,4 @@ void output(shared_ptr<rb_tree>T)
     output(T->left);
     cout<<T->key<<endl;
     output(T->right);
-}
-
-int main()
-{
-    shared_ptr<rb_tree>T=NIL;
-    for(int i=0;i<10;++i)
-    {
-        rb_tree_insert(T,make_shared<rb_tree>(rand()%1000,0));
-    }
-
-    output(T);
-    
-    cout<<"input the element you will delete"<<endl;
-    int del;
-    cin>>del;
-    auto delnode=rb_tree_search(T,del);
-    rb_tree_delete(T,delnode);
-    output(T);
-
-    cout<<"input the elemeny whose seccessor you want"<<endl;
-    int suc;
-    cin>>suc;
-    auto sucnode=rb_tree_search(T,suc);
-    cout<<rb_tree_successor(sucnode)->key<<endl;
-
-	return 0;
 }
